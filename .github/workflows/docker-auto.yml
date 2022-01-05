@@ -9,7 +9,8 @@ on:
       - main
 
 jobs:
-  build:
+  Docker-build:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     
     env:
@@ -29,9 +30,13 @@ jobs:
       run: docker-compose -f docker-compose.yml build
       
     - name: Start the Docker image
-      run: docker-compose -f docker-compose.yml up --abort-on-container-exit
+      run: docker-compose -f docker-compose.yml up -d --abort-on-container-exit
       
     - name: Test and Lint
       run: docker-compose run --rm todo sh -c "flake8"
+
+    - name: Stop containers
+      if: always()
+      run: docker-compose -f "docker-compose.yml" down
       
       
