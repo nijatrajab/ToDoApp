@@ -9,9 +9,10 @@ services:
     volumes:
       - ./todo:/todo
       - ./static:/static
-    command: python manage.py makemigrations &&
+    command: >
+      sh -c "python manage.py makemigrations &&
              python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000
+             python manage.py runserver 0.0.0.0:8000"
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
