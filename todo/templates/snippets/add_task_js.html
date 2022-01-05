@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    function addTask() {
+        const taskValue = document.getElementById("id_task_input").value
+        const allButton = document.getElementById("all_buttons")
+        payload = {
+            "csrfmiddlewaretoken": "{{csrf_token}}",
+            "task_value": taskValue
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '{% url "core:add_task" %}',
+            data: payload,
+            timeout: 10000,
+            success: function (data) {
+                if (data.response == "Successfully added task.") {
+                    taskItem(data.task_id, data.task_title, true, false)
+                    document.getElementById("id_task_input").value = ""
+                    allButton.classList.remove('all-buttons-hide')
+                    allButton.classList.add('all-buttons')
+                } else if (data.response != null) {
+                    alert(data.response)
+                }
+            },
+            error: function (data) {
+                alert(data.response);
+                // alert(jqXHR.status);
+                // alert(textStatus);
+                // alert(errorThrown);
+            },
+
+        })
+    }
+</script>

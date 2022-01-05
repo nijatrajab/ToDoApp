@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+<script src="{% static 'assets/js/script.js' %}" type="text/javascript"></script>
+
+<div class="new-task">
+    <input class="form-control" type="text" placeholder="Enter new task" id="id_task_input">
+    <button type="button" class="submit-task faa-parent animated-hover" onclick="addTask()" id="id_task_input_button">
+        <i class="fas fa-plus faa-tada faa-fast"></i>
+    </button>
+</div>
+<div class="container {% if todo %}all-buttons{% else %}all-buttons-hide{% endif %}" id="all_buttons">
+    <button class="{% if tac %}check-all{% else %}uncheck-all{% endif %}" id="id_check_all" onclick="checkAll()">
+        {% if tac %}Check all tasks{% else %}Uncheck all tasks{% endif %}
+    </button>
+    <button class="remove-all" id="id_remove_all" onclick="removeAll()">
+        Remove all tasks
+    </button>
+    <button class="remove-all" id="id_remove_checked_all" onclick="removeAllChecked()">
+        Remove checked tasks
+    </button>
+</div>
+<div class="container" id="id_task_list">
+    {% for i in todo %}
+    <div class="todo-list" id="id_todo_{{i.id}}">
+        <a class="task-list-item" id="id_task_item_{{i.id}}" {% if i.checked %}
+           style="text-decoration-line: line-through" {% endif %}>{{i.task}}</a>
+        <button class="{% if i.checked %}task-list-uncheck{% else %}task-list-check{% endif %} faa-parent animated-hover"
+                type="button"
+                id="id_task_check_{{i.id}}" onclick="checkTask('{{i.id}}', '{{i.task}}')">
+            <i class="{% if i.checked %}fas fa-undo-alt faa-wrench faa-fast{% else %}fas fa-check faa-horizontal faa-reverse{% endif %}"></i>
+        </button>
+        <button class="task-list-remove faa-parent animated-hover" type="button"
+                id="id_task_remove_{{i.id}}" onclick="removeTask('{{i.id}}')">
+            <i class="far fa-trash-alt faa-flash faa-fast"></i>
+        </button>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% include 'snippets/add_task_js.html' %}
+{% include 'snippets/remove_task_js.html' %}
+{% include 'snippets/check_task_js.html' %}
+{% include 'snippets/check_all_js.html' %}
+{% include 'snippets/remove_all_js.html' %}
+{% include 'snippets/remove_checked_all_js.html' %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    function checkTask(taskID, taskTitle) {
+        payload = {
+            "csrfmiddlewaretoken": "{{csrf_token}}",
+            "task_id": taskID
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '{% url "core:check_task" %}',
+            data: payload,
+            timeout: 10000,
+            success: function (data) {
+                if (data.response == "Successfully ch task.") {
+                    taskCheckButton(taskID, taskTitle)
+                } else if (data.response != null) {
+                    alert(data.response)
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR.status);
+                alert(textStatus);
+                alert(errorThrown);
+            },
+
+        })
+    }
+</script>

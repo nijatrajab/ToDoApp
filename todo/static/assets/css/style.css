@@ -1,0 +1,178 @@
+
+.submit-task {
+    background-color: white;
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    margin: 1rem;
+    padding: 10px;
+    min-width: 7%;
+}
+
+.submit-task:hover {
+    background-color: dodgerblue; /* Green */
+    color: white;
+}
+
+.new-task {
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    margin: 1rem;
+}
+
+.todo-list {
+    display: flex;
+    height: 58px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin-left: 80px;
+    margin-right: 80px;
+    list-style: none;
+    opacity: 1;
+}
+
+.task-list-item {
+    border: 1px solid #6c757d;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 80%;
+    text-decoration-line: none;
+    transition-duration: 0.4s;
+}
+
+.task-list-item:hover {
+    background-color: #eeeeee;
+    color: black;
+}
+
+.task-list-check {
+    background-color: white;
+    border: 1px solid limegreen;
+    color: limegreen;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.task-list-check:hover {
+    background-color: limegreen;
+    color: white;
+}
+
+.task-list-uncheck {
+    background-color: white;
+    border: 1px solid #0095ff;
+    color: #0095ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.task-list-uncheck:hover {
+    background-color: #0095ff;
+    color: white;
+}
+
+.task-list-remove {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.task-list-remove:hover {
+    background-color: red;
+    color: white;
+}
+
+.check-all {
+    background-color: white;
+    border: 1px solid limegreen;
+    color: limegreen;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.check-all:hover {
+    background-color: limegreen;
+    color: white;
+}
+
+.uncheck-all {
+    background-color: white;
+    border: 1px solid #0095ff;
+    color: #0095ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.uncheck-all:hover {
+    background-color: #0095ff;
+    color: white;
+}
+
+.remove-all {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+.remove-all:hover {
+    background-color: red;
+    color: white;
+}
+
+.remove-all-hide {
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.all-buttons {
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+
+.all-buttons-hide {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 0.3s;
+}

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    function removeTask(taskID) {
+        payload = {
+            "csrfmiddlewaretoken": "{{csrf_token}}",
+            "task_id": taskID
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '{% url "core:remove_task" %}',
+            data: payload,
+            timeout: 10000,
+            success: function (data) {
+                if (data.response == "Successfully removed task.") {
+                    taskRemoveButton(taskID)
+                } else if (data.response != null) {
+                    alert(data.response)
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR.status);
+                alert(textStatus);
+                alert(errorThrown);
+            },
+
+        })
+    }
+</script>

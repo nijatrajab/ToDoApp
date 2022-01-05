@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    function removeAll() {
+        const allButton = document.getElementById("all_buttons")
+        payload = {
+            "csrfmiddlewaretoken": "{{csrf_token}}",
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '{% url "core:remove_all_tasks" %}',
+            data: payload,
+            timeout: 10000,
+            success: function (data) {
+                if (data.response == "Successfully removed all tasks.") {
+                    taskRemoveAll()
+                    allButton.classList.remove('all-buttons')
+                    allButton.classList.add('all-buttons-hide')
+                } else if (data.response != null) {
+                    alert(data.response)
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR.status);
+                alert(textStatus);
+                alert(errorThrown);
+            },
+
+        })
+    }
+</script>

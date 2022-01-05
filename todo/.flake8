@@ -1,0 +1,10 @@
+[flake8]
+exclude =
+    migrations,
+    __pycache__,
+    manage.py,
+    settings.py,
+    old,
+    build,
+    dist
+max-line-length = 119

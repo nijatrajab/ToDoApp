@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    function checkAll() {
+        const taskButtonsChecked = document.querySelectorAll(".task-list-check")
+
+        payload = {
+            "csrfmiddlewaretoken": "{{csrf_token}}",
+            "tasks_checked": taskButtonsChecked.length === 0 ? "checked" : "unchecked"
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: '{% url "core:check_all_tasks" %}',
+            data: payload,
+            timeout: 10000,
+            success: function (data) {
+                if (data.response == "Successfully ch all task.") {
+                    taskCheckAll()
+                } else if (data.response != null) {
+                    alert(data.response)
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR.status);
+                alert(textStatus);
+                alert(errorThrown);
+            },
+
+        })
+    }
+</script>
