@@ -49,7 +49,11 @@ def add_task(request, *args, **kwargs):
         payload['response'] = "Successfully added task."
     else:
         payload['response'] = 'Task can not be empty'
-    payload['response'] = "Something went wrong."
+    print(todo)
+    print(task_value)
+    print(task)
+    print(todo_id)
+    print(todo_id)
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
