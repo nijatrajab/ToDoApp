@@ -11,7 +11,7 @@ RUN apk add --update --no-cache --virtual .tmp-build-deps \
 RUN python -m venv /py && \
     /py/bin/pip3 install --upgrade pip && \
     /py/bin/pip3 install -r /requirements.txt && \
-    adduser --disabled-password --no-create-home django-njt \
+    adduser --disabled-password --no-create-home django-njt
 RUN apk del .tmp-build-deps
 
 ENV PATH="/py/bin:$PATH"
