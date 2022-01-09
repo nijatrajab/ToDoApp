@@ -1,3 +1,9 @@
+$("#id_task_input").keyup(function (event) {
+    if (event.keyCode === 13) {
+        $("#id_task_input_button").click();
+    }
+});
+
 function taskItem(taskID, taskTitle, isNew, isChecked) {
     const taskValue = document.getElementById("id_task_list")
     const todoDiv = document.createElement("div")
@@ -222,10 +228,3 @@ function taskRemoveAllChecked() {
     })
 
 }
-
-$("#id_task_input").keyup(function (event) {
-    if (event.keyCode === 13) {
-        $("#id_task_input_button").click();
-    }
-});
-
