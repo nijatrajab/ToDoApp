@@ -1,0 +1,1 @@
+web: bash -c "cd todo && python3 manage.py collectstatic --noinput && python manage.py migrate && gunicorn --bind :$PORT todo.wsgi:application"

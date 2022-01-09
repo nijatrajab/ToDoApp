@@ -29,11 +29,13 @@ def add_task(request, *args, **kwargs):
 
     try:
         todo_id = request.session['todo_id']
+        payload['response'] = "Session is not empty."
     except Exception:
         new_todo = Todo()
         new_todo.save()
         request.session['todo_id'] = new_todo.id
         todo_id = new_todo.id
+        payload['response'] = "Session todo_id created."
 
     todo = Todo.objects.get(id=todo_id)
     task_value = request.POST.get("task_value")
@@ -47,6 +49,11 @@ def add_task(request, *args, **kwargs):
         payload['response'] = "Successfully added task."
     else:
         payload['response'] = 'Task can not be empty'
+    print(todo)
+    print(task_value)
+    print(task)
+    print(todo_id)
+    print(todo_id)
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
