@@ -49,11 +49,6 @@ def add_task(request, *args, **kwargs):
         payload['response'] = "Successfully added task."
     else:
         payload['response'] = 'Task can not be empty'
-    print(todo)
-    print(task_value)
-    print(task)
-    print(todo_id)
-    print(todo_id)
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
@@ -139,7 +134,6 @@ def check_all_tasks(request, *args, **kwargs):
                     task.checked = True
                     task.save()
                 payload['response'] = 'Successfully ch all task.'
-            payload['response'] = 'Successfully ch all task.'
         else:
             payload['response'] = "There is no task."
     else:

@@ -15,7 +15,7 @@
 
 ### App is live on _Google Cloud_
 ## [ToDoApp](https://todoapp-pvlnj4az7q-lm.a.run.app/)
-_Also app is supporting continuous deployment with `Cloud Run (Buildpacks)`._
+_Also app supports continuous deployment with `Cloud Run (Buildpacks)`._
 
 ## Local Development
 
