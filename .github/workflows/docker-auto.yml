@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - heroku
   pull_request:
     branches:
       - main
+      - heroku
 
 jobs:
   Docker-build:
