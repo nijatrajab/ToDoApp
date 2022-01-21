@@ -164,6 +164,7 @@
 }
 
 .all-buttons {
+    display: block;
     text-align: center;
     visibility: visible;
     opacity: 1;
@@ -171,6 +172,7 @@
 }
 
 .all-buttons-hide {
+    display: none;
     text-align: center;
     visibility: hidden;
     opacity: 0;

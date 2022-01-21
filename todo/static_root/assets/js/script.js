@@ -1,7 +1,9 @@
-$("#id_task_input").keyup(function (event) {
-    if (event.keyCode === 13) {
-        $("#id_task_input_button").click();
-    }
+$(document).ready(function () {
+    $('body').on("keyup", '#id_task_input', function (event) {
+        if (event.keyCode === 13) {
+            $("#id_task_input_button").click();
+        }
+    });
 });
 
 function taskItem(taskID, taskTitle, isNew, isChecked) {
@@ -23,7 +25,11 @@ function taskItem(taskID, taskTitle, isNew, isChecked) {
 
     const todoCheck = document.createElement("button")
     if (isNew) {
+        const todoCheckAllButton = document.getElementById("id_check_all")
         todoCheck.classList.add("task-list-check", "faa-parent", "animated-hover")
+        todoCheckAllButton.classList.remove('uncheck-all')
+        todoCheckAllButton.classList.add('check-all')
+        todoCheckAllButton.innerHTML = "Check all tasks"
     } else {
         if (isChecked) {
             todoCheck.classList.add("task-list-uncheck", "faa-parent", "animated-hover")
@@ -141,8 +147,8 @@ function taskCheckButton(taskID, taskTitle) {
 function taskCheckAll() {
     const taskButtonsChecked = document.querySelectorAll(".task-list-check")
     const taskButtonsUnchecked = document.querySelectorAll(".task-list-uncheck")
+    const taskItemsList = document.querySelectorAll(".task-list-item")
     const taskCheckAllButton = document.getElementById("id_check_all")
-    // const allButton = document.getElementById("id_remove_checked_all")
     if (taskButtonsChecked.length == 0) {
         taskButtonsUnchecked.forEach(function (el) {
             el.classList.remove('task-list-uncheck');
@@ -150,6 +156,9 @@ function taskCheckAll() {
             el.children[0].classList.remove('fa-undo-alt', "faa-wrench", "faa-fast")
             el.children[0].classList.add('fa-check', "faa-horizontal", "faa-reverse")
         });
+        taskItemsList.forEach(function (el) {
+            el.style.textDecorationLine = "none"
+        })
         taskCheckAllButton.innerHTML = "Check all tasks"
         taskCheckAllButton.classList.remove('uncheck-all')
         taskCheckAllButton.classList.add('check-all')
@@ -160,6 +169,9 @@ function taskCheckAll() {
             el.children[0].classList.remove('fa-check', "faa-horizontal", "faa-reverse")
             el.children[0].classList.add('fa-undo-alt', "faa-wrench", "faa-fast")
         });
+        taskItemsList.forEach(function (el) {
+            el.style.textDecorationLine = "line-through"
+        })
         taskCheckAllButton.innerHTML = "Uncheck all tasks"
         taskCheckAllButton.classList.remove('check-all')
         taskCheckAllButton.classList.add('uncheck-all')
@@ -170,6 +182,9 @@ function taskCheckAll() {
             el.children[0].classList.remove('fa-check', "faa-horizontal", "faa-reverse")
             el.children[0].classList.add('fa-undo-alt', "faa-wrench", "faa-fast")
         });
+        taskItemsList.forEach(function (el) {
+            el.style.textDecorationLine = "line-through"
+        })
         taskCheckAllButton.innerHTML = "Uncheck all tasks"
         taskCheckAllButton.classList.remove('check-all')
         taskCheckAllButton.classList.add('uncheck-all')

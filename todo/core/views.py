@@ -182,6 +182,6 @@ def remove_all_checked_tasks(request, *args, **kwargs):
         tasks.delete()
         payload['response'] = 'Successfully removed all checked tasks.'
     else:
-        payload['response'] = "There is no checked tasks."
+        payload['response'] = "There is no checked task."
 
     return HttpResponse(json.dumps(payload), content_type="application/json")
