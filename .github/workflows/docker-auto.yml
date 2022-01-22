@@ -35,7 +35,7 @@ jobs:
       run: docker-compose -f docker-compose.yml up -d
       
     - name: Test and Lint
-      run: docker-compose -f docker-compose.yml run --rm todo sh -c "python manage.py migrate && python manage.py test && flake8"
+      run: docker-compose -f docker-compose.yml run --rm todo sh -c "python manage.py test && flake8"
 
     - name: Stop containers
       if: always()
