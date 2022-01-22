@@ -1,21 +1,23 @@
 <p text-align="center">
 
 ## ToDoApp
-[![Docker Image CI](https://github.com/nijatrajab/todoapp/actions/workflows/docker-auto.yml/badge.svg)](https://github.com/nijatrajab/todoapp/actions/workflows/docker-auto.yml)
+[![NewsAPI Docker CI](https://github.com/nijatrajab/todoapp/actions/workflows/docker-auto.yml/badge.svg)](https://github.com/nijatrajab/todoapp/actions/workflows/docker-auto.yml)
 [![Project stage: Production Ready][project-stage-badge: Production Ready]][project-stage-page]
 
 [project-stage-badge: Production Ready]: https://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg
 [project-stage-page]: https://blog.pother.ca/project-stages/
 
-[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://todoapp-pvlnj4az7q-lm.a.run.app/)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 [![GitHub Actions](https://img.shields.io/badge/githubactions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/nijatrajab/todoapp/actions)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/get-started)
+[![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)](https://todoappnjt.herokuapp.com/)
 
 </p>
 
-### App is live on _Google Cloud_
-## [ToDoApp](https://todoapp-pvlnj4az7q-lm.a.run.app/)
-_Also app supports continuous deployment with `Cloud Run (Buildpacks)`._
+### App is live on _Heroku_
+## [ToDoApp](https://todoappnjt.herokuapp.com/)
+_Also app supports continuous deployment with `Google Cloud Run (Buildpacks)`._
+ 
 
 ## Local Development
 

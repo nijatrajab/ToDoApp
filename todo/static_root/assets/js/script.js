@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('body').on("keyup", '#id_task_input', function (event) {
         if (event.keyCode === 13) {
             $("#id_task_input_button").click();
-        }
+        };
     });
 });
 

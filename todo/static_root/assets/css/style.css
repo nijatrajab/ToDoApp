@@ -1,3 +1,21 @@
+.github-button {
+    background-color: white;
+    border: 1px solid rgba(13, 17, 23, 0.63);
+    color: rgba(13, 17, 23, 0.63);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    min-width: 7%;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+.github-button:hover {
+    background-color: #0d1117;
+    color: white;
+}
 
 .submit-task {
     background-color: white;
@@ -16,7 +34,7 @@
 }
 
 .new-task {
-    margin: 5rem;
+    margin: 3rem;
     display: flex;
     justify-content: center;
 }
